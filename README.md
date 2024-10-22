@@ -64,5 +64,59 @@ plt.savefig('budget-vs-gross-earnings.png')
 #### Results
 ![budget vs Gross Earnings](budget-vs-gross-earnings.png)
 
+#### Insights
+The more budget a film has, the higher chance that it is going to be a box office success. Judging by the plot, as the budget increases, the gross also increases.
+
+```python
+# Correlation between Budget and Gross plot
+correlation_matrix = df_copy.corr(numeric_only = True)
+sns.heatmap(correlation_matrix, annot = True)
+plt.title("Correlation Matrix for Numeric Features")
+plt.xlabel("Movie Features")
+plt.ylabel("Movie Features")
+plt.savefig('correlation-between-budget-and-gross.png')
+plt.show()
+```
+#### Results 
+![Correlation between Budget and Gross plot](correlation-between-budget-and-gross.png)
+
+#### Insights
+There is a strong positive correlation between the budget of a movie and it's gross earning, with a correlation coefficient of 0.71. This suggets that higher-budget films tend to generate higher gross revenue.
+
+```python
+# Bar plot between Genre and Gross Earnings
+plt.figure(figsize=(10, 6))
+plt.bar(genre_means['genre'], genre_means['gross'])
+plt.xticks(rotation=45)
+plt.xlabel('Genre')
+plt.ylabel('Average Gross Earnings')
+plt.title('Average Gross Earnings by Genre')
+plt.savefig('average-gross-by-genre.png')
+plt.show()
+```
+#### Results 
+![Average Gross earnings by Genre](average-gross-by-genre.png)
+
+#### Insights
+Animation and Family significantly outperform other genres. This suggests that films in these genres tend to have strong commercial appeal, possibly due to their broad audience reach and high production values. 
+
+## What I Learned 
+Throughout this project, i deepened my understanding of the financial ascpects of film production and enhanced my skills in Python, especially in data manipulation and visualization. Here are a few specific things i learned:
+
+Data Cleaning Importance: I learned that thorough data cleaning and preparation are crucial before any analysis can be conducted, ensuring the accuracy of insights derived from the data.
+
+## Challenges I Faced
+Data Inconsistencies: Handling missing or inconsistent data entries require careful consideration and thorough data cleaning techiques to ensure the integrity of the analysis.
+
+Blancing Breadth and Depth: Deciding how deeply to dive into each analysis while maintaining a broad overview of the data landscape required constant balancing to ensure comprehensive coverage without getting lost in details.
+
+## Conclusion
+This analysis provides valuable insights into the dynamics of the film industry by examining the relationship between budget and gross earnings, as well as the average performance of different genres.
+
+My findings indicate a positive correlation between budget and gross earnings, suggesting that higher investment in production often leads to greater financial returns. Additionally, the genre analysis revealed that certain genres, such as Animation, consistently outperform others in terms of box office earnings, highlighting the importance of genre selection in film production.
+
+These insights not only inform production strategies but also offer a data-driven approach for stakeholders in the industry. Ultimately, this project underscores the significance of data analysis in understanding and navigating the complexities of the movie industry, paving the way for more informed decision-making in film production and investment.
+
+
 
 
